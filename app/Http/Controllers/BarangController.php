@@ -68,7 +68,7 @@ class BarangController extends Controller
     public function edit($id)
     {
         $barang = Barang::findOrFail($id);
-        return view('barang.edit')->with('');
+        return view('barang.edit')->with('barang',$barang);
     }
 
     /**
@@ -80,7 +80,15 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+        $barang->kdBarang = $request->get('kdBarang');
+        $barang->nama = $request->get('nama');
+        $barang->hrg_satuan = $request->get('hrg_satuan');
+        $barang->jenis_barang = $request->get('jenis_barang');
+        $barang->id_pengajuan = $request->get('id_pengajuan');
+        $barang->save();
+        $id_pengajuan = $request->get('id_pengajuan');
+        return redirect('/pengajuan/'.$id_pengajuan.'/detail');
     }
 
     /**

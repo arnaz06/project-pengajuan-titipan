@@ -8,9 +8,7 @@
     <div class="row">
         <div class="col-lg-6">
             {!! Form::open(['url' => 'barang/create']) !!}
-            @if(isset($pengajuan))
-                {!! Form::hidden('id_pengajuan',$pengajuan->id, ['id' => 'unit_id']) !!}
-            @endif
+            {!! Form::hidden('id_pengajuan',$pengajuan->id, ['id' => 'unit_id']) !!}
             <div class="form-group">
                 {!! Form::label('kdBarang', 'Kode Barang:', ['class' => 'control-label']) !!}
                 {!! Form::text('kdBarang', '', ['class' => 'form-control', 'required']) !!}

@@ -56,7 +56,9 @@ class UnitController extends Controller
     public function show($id)
     {
         $unit = Unit::findOrFail($id);
-        return view ('unit.show')->with('unit',$unit);
+        $pengajuans = Pengajuan::where('id_unit',$unit->id)->get();
+        return view ('unit.show')->with('unit',$unit)
+                                 ->with('pengajuans',$pengajuans);
     }
 
     /**

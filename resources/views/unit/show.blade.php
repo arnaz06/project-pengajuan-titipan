@@ -50,31 +50,24 @@
                         <th>Nomer Pengajuan</th>
                         <th>Jumlah Pengajuan</th>
                         <th>Kode Unit</th>
+                        <th>ACC</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {{--@if(isset($projects))--}}
-                        {{--@foreach($projects as $show)--}}
-                            {{--<tr>--}}
-                                {{--<td>{{ $show->name }}</td>--}}
-                                {{-- @foreach($projectstatuss as $status) --}}
-                                {{--<td>{{$show->projectstatus->name}}</td>--}}
-                                {{-- @endforeach --}}
-
-                                {{--<td>{{$show->rating}}</td>--}}
-                                {{--<td>{{$show->signer}}</td>--}}
-                                {{--<td>{{$show->quotation_number}}</td>--}}
-                                {{--<td class="">--}}
-                                    {{--<a href="{{url('projects/'.$show->id)}}"><button type="button" class="btn btn-info btn-sm" name="button"><span class="fa fa-info"></span> Detail</button></a>--}}
-                                    {{--<a href="{{url('projects/'.$show->id.'/edit')}}"><button type="button" class="btn btn-success btn-sm" name="button"><span class="fa fa-edit"></span> Edit</button></a>--}}
-                                    {{--@if ($show->status_id == 1)--}}
-                                        {{--<a href="{{url('projects/'.$show->id.'/delete')}}"><button type="button" class="btn btn-danger btn-sm" name="button"><span class="fa fa-times"></span> Hapus</button></a>--}}
-                                    {{--@endif--}}
-                                    {{--<a href="{{route('projects/print',$show->id)}}"><button type="button" class="btn btn-sm btn-warning" name="button"><span class="glyphicon glyphicon-print"></span> Print</button></a>--}}
-                                {{--</td>--}}
-                            {{--</tr>--}}
-                        {{--@endforeach--}}
+                    @foreach($pengajuans as $pengajuan)
+                        <tr>
+                            <td>{{ $pengajuan->no_pengajuan }}</td>
+                            <td>{{$pengajuan->jml_pengajuan}}</td>
+                            <td>{{$unit->kdUnit}}</td>
+                            <td>{{$pengajuan->acc}}</td>
+                            <td class="">
+                                <a href="{{url('/pengajuan/'.$pengajuan->id.'/detail')}}"><button type="button" class="btn btn-info" name="button"><span class="fa fa-info"></span> Detail</button></a>
+                                <a href="{{url('/pengajuan/'.$pengajuan->id.'/edit')}}"><button type="button" class="btn btn-success" name="button"><span class="fa fa-edit"></span> Edit</button></a>
+                                <a href="{{url('/pengajuan/'.$pengajuan->id.'/delete')}}"><button type="button" class="btn btn-danger" name="button"><span class="fa fa-times"></span> Hapus</button></a>
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

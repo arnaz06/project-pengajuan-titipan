@@ -34,11 +34,17 @@ Route::group(['middleware' => ['web']], function(){
     Route::post('/pengajuan/{id}','PengajuanController@update');
     Route::get('/pengajuan/{id}/detail','PengajuanController@show');
     Route::get('/pengajuan/{id}/delete','PengajuanController@destroy');
+    Route::get('/pengajuan/print/{id}',array('as'=>'pengajuan/print','uses'=>'PengajuanController@printpdf'));
     //Barang
     Route::get('/pengajuan/{id}/barang/create','BarangController@create');
     Route::post('/barang/create','BarangController@store');
     Route::get('/barang/{id}/edit','BarangController@edit');
     Route::post('/barang/{id}','BarangController@update');
     Route::get('/barang/{id}/delete','BarangController@destroy');
+    //Pengadaan
+    Route::get('/pengadaan/','PengadaanController@index');
+    Route::get('/pengadaan/create','PengadaanController@create');
+    Route::post('/pengadaan/create','PengadaanController@store');
+    Route::get('/pengadaan/print/{id}',array('as'=>'pengadaan/print','uses'=>'PengadaanController@printpdf'));
 
 });

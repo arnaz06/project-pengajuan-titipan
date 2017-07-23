@@ -7,16 +7,23 @@
 @section('body')
     <div class="row">
         <div class="col-lg-6">
-            {!! Form::model($pengajuan, ['method' => 'post', 'action' => ['PengajuanController@update', $pengajuan->id]]) !!}
-            {!! Form::hidden('acc',$pengajuan->acc, ['acc' => 'acc']) !!}
-            {!! Form::hidden('id_unit',$pengajuan->id_unit, ['id_unit' => 'id_unit']) !!}
+            {!! Form::model($barang, ['method' => 'post', 'action' => ['BarangController@update', $barang->id]]) !!}
+            {!! Form::hidden('id_pengajuan',$barang->id_pengajuan, ['id' => 'id_pengajuan']) !!}
             <div class="form-group">
-                {!! Form::label('no_pengajuan', 'Nomer Pengajuan:', ['class' => 'control-label']) !!}
-                {!! Form::text('no_pengajuan', null, ['class' => 'form-control']) !!}
+                {!! Form::label('kdBarang', ' Kode Barang:', ['class' => 'control-label']) !!}
+                {!! Form::text('kdBarang', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('jml_pengajuan', 'Jumlah Pengajuan:', ['class' => 'control-label']) !!}
-                {!! Form::text('jml_pengajuan', null, ['class' => 'form-control']) !!}
+                {!! Form::label('nama', 'Nama Barang:', ['class' => 'control-label']) !!}
+                {!! Form::text('nama', null, ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('hrg_satuan', 'Harga Satuan:', ['class' => 'control-label']) !!}
+                {!! Form::text('hrg_satuan', null, ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('jenis_barang', 'Jenis Barang:', ['class' => 'control-label']) !!}
+                {!! Form::text('jenis_barang', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
                 {{ Form::submit('Simpan', ['class' => 'btn btn-primary btn-lg btn-block']) }}

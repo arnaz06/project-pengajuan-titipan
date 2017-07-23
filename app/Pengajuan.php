@@ -12,4 +12,8 @@ class Pengajuan extends Model
         return $this->belongsTo('App\Unit');
     }
 
+    public function pengadaan(){
+        return $this->hasOne('App\Pengadaan');
+    }
+
 }

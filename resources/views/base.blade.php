@@ -126,31 +126,15 @@
 
                         </li> --}}
                         <li>
-                            <a href="{{url('/leadman')}}"><i class="fa fa-dashboard fa-fw"></i> Lead Management </a>
+                            <a href="{{url('/unit')}}"><i class="fa fa-dashboard fa-fw"></i> Unit </a>
                         </li>
                         <li>
-                            <a href="{{url('/customer')}}"><i class="fa fa-dashboard fa-fw"></i> Customer </a>
+                            <a href="{{url('/pengajuan')}}"><i class="fa fa-dashboard fa-fw"></i> Pengajuan </a>
                         </li>
                         <li>
-                            <a href="{{url('/expenses')}}"><i class="fa fa-dashboard fa-fw"></i> Expenses </a>
-                        </li>
-                        <li>
-                            <a href="{{url('/invoice')}}"><i class="fa fa-dashboard fa-fw"></i> Invoice </a>
-                        </li>
-                        <li>
-                            <a href="{{url('/receipt')}}"><i class="fa fa-dashboard fa-fw"></i> Receipt </a>
-                        </li>
-                        {{-- <li>
-                            <a href="{{url('/item')}}"><i class="fa fa-dashboard fa-fw"></i> Item </a>
-                        </li> --}}
-                        <li>
-                            <a href="{{url('/projects')}}"><i class="fa fa-dashboard fa-fw"></i> Projects </a>
-                        </li>
-                        <li>
-                            <a href="{{url('/cashflow')}}"><i class="fa fa-dashboard fa-fw"></i> Cashflow </a>
+                            <a href="{{url('/pengadaan')}}"><i class="fa fa-dashboard fa-fw"></i> Pengadaan </a>
                         </li>
 
-                    </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

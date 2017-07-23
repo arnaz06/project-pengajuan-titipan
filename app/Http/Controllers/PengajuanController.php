@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Barang;
 use App\Pengajuan;
 use App\Unit;
+use Barryvdh\DomPDF\Facade  as PDF;
 use Illuminate\Http\Request;
 
 class PengajuanController extends Controller
@@ -79,9 +80,17 @@ class PengajuanController extends Controller
     public function edit($id)
     {
         $pengajuan = Pengajuan::findOrFail($id);
-
         return view('pengajuan.edit')->with('pengajuan',$pengajuan);
 
+    }
+    public function printpdf($id){
+        $pengajuan = Pengajuan::findOrFail($id);
+        $unit = Unit::where('id',$pengajuan->id_unit)->first();
+        $barangs = Barang::where('id_pengajuan',$id)->get();
+        $view = view('pengajuan.print',compact('pengajuan','unit','barangs'))->render();
+        $dompdf = PDF::loadHtml( $view)->setPaper('a4');
+        return $dompdf->download('doc.pdf');
+        return view('pengajuan.print');
     }
 
     /**
