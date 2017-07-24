@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('title')
-    Detail
+    Detail Unit
 @endsection
 
 @section('body')

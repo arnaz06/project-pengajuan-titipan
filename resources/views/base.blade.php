@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistem Pengadaan Barang</title>
+    <title>Sistem Informasi Pengadaan Barang di Pdam Tirto Panguripan Kendal</title>
 
     <style media="screen">
         .numeric{
@@ -77,7 +77,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('/')}}">Sistem Pengadaan Barang</a>
+                <a class="navbar-brand" href="{{url('/')}}">Home</a>
             </div>
             <!-- /.navbar-header -->
 

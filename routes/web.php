@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('/pengadaan/','PengadaanController@index');
     Route::get('/pengadaan/create','PengadaanController@create');
     Route::post('/pengadaan/create','PengadaanController@store');
+    Route::get('/pengadaan/{id}/detail','PengadaanController@show');
     Route::get('/pengadaan/print/{id}',array('as'=>'pengadaan/print','uses'=>'PengadaanController@printpdf'));
 
 });

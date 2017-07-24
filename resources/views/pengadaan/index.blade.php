@@ -42,9 +42,10 @@
                         <td>{{$pengadaan->jml_pengadaan}}</td>
                         <td>{{$pengadaan->acc}}</td>
                         <td class="">
-                            <a href="{{url('/pengajuan/'.$pengadaan->id.'/detail')}}"><button type="button" class="btn btn-info" name="button"><span class="fa fa-info"></span> Detail</button></a>
-                            <a href="{{url('/pengajuan/'.$pengadaan->id.'/edit')}}"><button type="button" class="btn btn-success" name="button"><span class="fa fa-edit"></span> Edit</button></a>
-                            <a href="{{url('/pengajuan/'.$pengadaan->id.'/delete')}}"><button type="button" class="btn btn-danger" name="button"><span class="fa fa-times"></span> Hapus</button></a>
+                            <a href="{{url('/pengadaan/'.$pengadaan->id.'/detail')}}"><button type="button" class="btn btn-info btn-sm" name="button"><span class="fa fa-info"></span> Detail</button></a>
+                            <a href="{{url('/pengadaan/'.$pengadaan->id.'/edit')}}"><button type="button" class="btn btn-success btn-sm" name="button"><span class="fa fa-edit"></span> Edit</button></a>
+                            <a href="{{url('/pengadaan/'.$pengadaan->id.'/delete')}}"><button type="button" class="btn btn-danger btn-sm" name="button"><span class="fa fa-times"></span> Hapus</button></a>
+
                         </td>
                     </tr>
                 @endforeach

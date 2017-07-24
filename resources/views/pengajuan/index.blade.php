@@ -52,7 +52,6 @@
             </table>
         </div>
     </div>
-
     <script>
         $(document).ready(function() {
             $('#customer-table').DataTable({

@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('title')
-    Detail
+    Detail Pengajuan
 @endsection
 
 @section('body')
@@ -37,9 +37,11 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <a onclick="window.history.back()"><button type="button" class="btn btn-default" name="button"><span class="fa fa-chevron-left "></span> Kembali </button></a>
-            <a href="{{url('/pengajuan/'.$pengajuan->id.'/edit')}}"><button type="button" class="btn btn-success" name="button"><span class="fa fa-edit"></span> Edit</button></a>
-            <a href="{{url('/pengajuan/'.$pengajuan->id.'/delete')}}"><button type="button" class="btn btn-danger" name="button"><span class="fa fa-times"></span> Hapus</button></a>
+            <a onclick="window.history.back()"><button type="button" class="btn btn-default btn-sm" name="button"><span class="fa fa-chevron-left "></span> Kembali </button></a>
+            <a href="{{url('/pengajuan/'.$pengajuan->id.'/edit')}}"><button type="button" class="btn btn-success btn-sm" name="button"><span class="fa fa-edit"></span> Edit</button></a>
+            <a href="{{url('/pengajuan/'.$pengajuan->id.'/delete')}}"><button type="button" class="btn btn-danger btn-sm" name="button"><span class="fa fa-times"></span> Hapus</button></a>
+            <a href="{{url('pengajuan/print/'.$pengajuan->id)}}"><button type="button" class="btn btn-primary btn-sm" name="button"><span class="fa fa-edit"></span> Print</button></a>
+
         </div>
     </div>
 
@@ -73,9 +75,7 @@
                                 <td>{{$pengajuan->no_pengajuan}}</td>
                                 <td class="">
                                     <a href="{{url('barang/'.$barang->id.'/edit')}}"><button type="button" class="btn btn-success btn-sm" name="button"><span class="fa fa-edit"></span> Edit</button></a>
-
-                                        <a href="{{url('barang/'.$barang->id.'/delete')}}"><button type="button" class="btn btn-danger btn-sm" name="button"><span class="fa fa-times"></span> Hapus</button></a>
-                                    {{--<a href="{{route('projects/print',$barang->id)}}"><button type="button" class="btn btn-sm btn-warning" name="button"><span class="glyphicon glyphicon-print"></span> Print</button></a>--}}
+                                    <a href="{{url('barang/'.$barang->id.'/delete')}}"><button type="button" class="btn btn-danger btn-sm" name="button"><span class="fa fa-times"></span> Hapus</button></a>
                                 </td>
                             </tr>
                         @endforeach

@@ -31,7 +31,7 @@ class PengadaanController extends Controller
      */
     public function create()
     {
-        $pengajuans = Pengajuan::where('acc','1')->get();
+        $pengajuans = Pengajuan::all();
         $pengajuanNama = $pengajuans->pluck('no_pengajuan','id');
         return view('pengadaan.create')->with('pengajuanNama',$pengajuanNama);
     }
@@ -61,7 +61,10 @@ class PengadaanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pengadaan = Pengadaan::findOrFail($id);
+        $pengajuan = Pengajuan::where('id',$pengadaan->id_pengajuan)->first();
+        return view('pengadaan.show')->with('pengadaan',$pengadaan)
+                                     ->with('pengajuan',$pengajuan);
     }
 
     /**
