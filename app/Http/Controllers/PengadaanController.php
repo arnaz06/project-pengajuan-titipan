@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Pengadaan;
 use Illuminate\Http\Request;
 use App\Pengajuan;
-
+use Barryvdh\DomPDF\Facade  as PDF;
+use App\Unit;
+use App\Barang;
 
 class PengadaanController extends Controller
 {
@@ -74,13 +76,14 @@ class PengadaanController extends Controller
     }
 
     public function printpdf($id){
-        $pengajuan = Pengajuan::findOrFail($id);
+        $pengadaan = Pengadaan::findOrFail($id);
+        $pengajuan = Pengajuan::where('id',$pengadaan->id_pengajuan)->first();
         $unit = Unit::where('id',$pengajuan->id_unit)->first();
-        $barangs = Barang::where('id_pengajuan',$id)->get();
-        $view = view('pengajuan.print',compact('pengajuan','unit','barangs'))->render();
+        $barangs = Barang::where('id_pengajuan',$pengajuan->id)->get();
+        $view = view('pengadaan.print',compact('pengadaan','pengajuan','unit','barangs'))->render();
         $dompdf = PDF::loadHtml( $view)->setPaper('a4');
         return $dompdf->download('doc.pdf');
-        return view('pengajuan.print');
+        return view('pengadaan.print');
     }
 
     /**
@@ -97,7 +100,7 @@ class PengadaanController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+   *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

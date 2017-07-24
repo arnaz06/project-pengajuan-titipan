@@ -17,10 +17,11 @@
 </head>
 <body>
 <div class="container">
+    <div style="float: left;">No Pengadaan : {{$pengadaan->no_pengadaan}}</div><br>
     <div style="float: left;">No Pengajuan : {{$pengajuan->no_pengajuan}}</div><br>
     <div style="float: left;">Kode Unit : {{$unit->kdUnit}}</div><br>
-    <div style="float: left;">Jumlah Pengajuan : {{$pengajuan->jml_pengajuan}}</div>
-    <h2 style="text-align: center;"> Pengajaun Barang </h2>
+    <div style="float: left;">Jumlah Pengadaan : {{$pengadaan->jml_pengadaan}}</div>
+    <h2 style="text-align: center;">Pengadaan Barang</h2>
     <table class="table-striped" width="100%">
         <tr>
             <th>Kode Barang</th>
@@ -40,7 +41,7 @@
     </table>
     <br>
     {{--<p align="right">Sudah terbayar pada {{ \Carbon\Carbon::parse($receipts->receipt->payment_date)->format('d F Y') }}<br>--}}
-        {{--Nomor receipt {{$receipts->receipt->receipt_number}}</p>--}}
+    {{--Nomor receipt {{$receipts->receipt->receipt_number}}</p>--}}
 
 </div>
 </body>
